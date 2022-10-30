@@ -3,6 +3,8 @@ const inquirer = require('inquirer');
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const htmlTemplate = require("./src/htmlTemplate");
+const outputFile = "./dist/index.html";
 
 const team = [];
 
@@ -16,7 +18,7 @@ const roleQuestion = [ // Questions to ask for role
     }
 ]
 
-function init() { // Initializes set of questions
+const init = () => { // Initializes set of questions
     inquirer
         .prompt(roleQuestion) // Asks for role of member
         .then((role) => {
@@ -126,7 +128,7 @@ function init() { // Initializes set of questions
                     if(data.addAnother) { // If user selected yes to add team member, runs function again
                         init();
                     } else (
-                        fs.writeFile('index.html', JSON.stringify(team), (err) =>
+                        fs.writeFile(outputFile, htmlTemplate(team), (err) =>
                         err ? console.error(err) : console.log('File generated!'))
                     )
                 })
