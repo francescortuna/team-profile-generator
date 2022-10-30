@@ -25,19 +25,19 @@ describe("Engineer", () => {
         expect(createEngineer.email).toBe("sampleemail@gmail.com");
     });
 
-    it("should create an Engineer Instance with an github", () => {
+    it("should create an Engineer Instance with a github", () => {
         const createEngineer = new Engineer("Frances", 1, "sampleemail@gmail.com", "francescortuna");
 
         expect(createEngineer.github).toBe("francescortuna");
     });
 
-    it("should create an Engineer Instance with an email", () => {
+    it("should return Engineer's github profile link", () => {
         const createEngineer = new Engineer("Frances", 1, "sampleemail@gmail.com", "francescortuna");
 
         expect(createEngineer.getGithub()).toBe("github.com/francescortuna");
     });
 
-    it("should create an Engineer Instance with an email", () => {
+    it("should return Engineer role", () => {
         const createEngineer = new Engineer();
 
         expect(createEngineer.getRole()).toBe("Engineer");
