@@ -25,7 +25,13 @@ describe("Manager", () => {
         expect(createManager.email).toBe("sampleemail@gmail.com");
     });
 
-    it("should create a Manager Instance that will return the role 'Employee'", () => {
+    it("should create a Manager Instance with office number", () => {
+        const createManager = new Manager("Frances", 1, "sampleemail@gmail.com", 123);
+
+        expect(createManager.officeNum).toBe(123);
+    })
+
+    it("should return Manager role'", () => {
         const createManager = new Manager("Frances", 1, "sampleemail@gmail.com");
 
         expect(createManager.getRole()).toBe("Manager");

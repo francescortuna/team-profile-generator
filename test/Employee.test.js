@@ -25,7 +25,7 @@ describe("Employee", () => {
         expect(createEmployee.email).toBe("sampleemail@gmail.com");
     });
 
-    it("should create an Employee Instance that will return the role 'Employee'", () => {
+    it("should return Employee role", () => {
         const createEmployee = new Employee("Frances", 1, "sampleemail@gmail.com");
 
         expect(createEmployee.getRole()).toBe("Employee");
