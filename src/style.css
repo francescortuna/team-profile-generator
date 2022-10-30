@@ -9,3 +9,11 @@
 .card {
     margin: 10px;
 }
+
+.card-header {
+    height: 41px;
+}
+
+.card-body {
+    height: 275px
+}
